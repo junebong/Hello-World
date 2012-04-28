@@ -45,7 +45,7 @@ function upload(response, postData) {
 
 function show(response, postData) {
     console.log("Request handler 'show' was called.");
-    fs.readFile("/tmp/pics/nodejs.png", "binary", function(error, file) {
+    fs.readFile("./tmp/pics/nodejs.png", "binary", function(error, file) {
        if (error) {
            response.writeHead(500, {"Content-Type": "text/plain"});
            response.write(error + "\n");
