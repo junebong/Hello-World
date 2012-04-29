@@ -12,7 +12,8 @@ function start(response) {
     });
 }*/
 var querystring = require("querystring"),
-    fs = require("fs");
+    fs = require("fs"),
+    db = require("./db");
 
 function start(response, postData) {
     console.log("Request handler 'start' was called.");
@@ -58,6 +59,12 @@ function show(response, postData) {
     });
 }
 
+function tdb(response, postData) {
+    console.log("Request handler 'tdb' was called.");
+    db.testdb(response);
+}
+
 exports.start = start;
 exports.upload = upload;
 exports.show = show;
+exports.tdb = tdb;
